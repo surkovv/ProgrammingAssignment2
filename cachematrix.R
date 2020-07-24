@@ -33,7 +33,7 @@ makeCacheMatrix <- function(m = matrix()) {
 cacheSolve <- function(x, ...) {
     inv <- x$getInverse()
     if (!is.null(inv)) {
-        return(inv)
+        return(makeCacheMatrix(inv))
     }
     data <- x$get()
     inv <- solve(data, ...)
